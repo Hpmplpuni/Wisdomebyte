@@ -1,0 +1,348 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-image: url('images/back.jfif'); /* Add your background image URL here */
+  background-size: cover; /* Cover the entire background */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-attachment: fixed; /* Keep the image fixed when scrolling */
+  background-position: center; /* Center the image */
+  margin: 0; /* Remove default margin */
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  background-color: #333;
+  width: 70px;
+  height: 60px;
+  z-index: 999;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.hamburger-menu span {
+  display: block;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 200px;
+  background-color: #333;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: -400px; /* Start hidden more to the left */
+  height: 100%;
+  transition: left 0.5s ease;
+  z-index: 1000;
+  border-bottom-right-radius: 100%;
+  border-top-right-radius: 30px;
+}
+
+/* Sidebar shown (move 400px to the right) */
+.sidebar.show {
+  left: 0; /* Slide into view */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 20px;
+}
+
+.sidebar ul li {
+  margin: 40px 0;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+  color: #ccc;
+  padding: 10px;
+  padding-left: 40px;
+  background-color: #0056b3;
+  border-radius: 10px;
+}
+
+/* Blog Container */
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-left: 220px; /* Adjust for fixed sidebar width */
+}
+
+#blogContainer {
+  width: 70%;
+}
+
+/* Blog Post Styles */
+.blog-post {
+  background: #fff;
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.blog-post img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.blog-post h2 {
+  margin: 10px 0;
+  font-size: 1.5em;
+}
+
+.blog-post p {
+  font-size: 1em;
+}
+
+/* Remove Post Button */
+.remove-post {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: red;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Button Styles */
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Rating Stars */
+.star-rating {
+  display: flex;
+  gap: 5px;
+}
+
+.star {
+  cursor: pointer;
+  font-size: 1.5em;
+  color: gold;
+  transition: transform 0.3s ease;
+}
+
+.star:hover,
+.star.selected {
+  transform: scale(1.2);
+}
+
+/* Like Button */
+.like-button {
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #555;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.like-button.liked {
+  color: red;
+  transform: scale(1.3);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Logo Styles */
+.logo {
+  position: fixed;
+  display: flex;
+  top: 1px;
+  right: 5px;
+  height: 150px;
+  max-width: 150px;
+  background-color: #e1f7ff;
+  z-index: 1000;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+.logo img {
+  display: flex;
+  width: 100%;
+  height: 150px;
+  z-index: 1000;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .notification-bar {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .logo img {
+    width: 70px;
+    height: 70px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .sidebar {
+    width: 30px; /* Adjust sidebar width for mobile */
+  }
+
+  .container {
+    flex-direction: column; /* Stack elements on mobile */
+    margin-left: 0; /* Reset margin */
+  }
+
+  #blogContainer {
+    width: 100%; /* Full width on mobile */
+  }
+
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+/* Typography */
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+/* Button Styles */
+#addPostBtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 20px 0; /* Add margin for spacing */
+  width: auto; /* Default to auto for larger screens */
+}
+
+#addPostBtn:hover {
+  background-color: #45a049;
+}
+
+/* Additional Styles for the Container */
+.container {
+  display: flex;
+  flex-direction: column; /* Stack elements in a column */
+  padding: 20px;
+  margin-left: 220px; /* Adjust for fixed sidebar width */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .container {
+      margin-left: 0; /* Reset margin on mobile */
+      padding: 10px; /* Reduce padding for mobile */
+  }
+
+  #addPostBtn {
+      width: 100%; /* Full width for mobile */
+      padding: 15px; /* Increase padding for easier touch */
+      margin: 10px 0; /* Adjust margin */
+  }
+  
+  /* Adjust blog container styles */
+  #blogContainer {
+      width: 100%; /* Full width for blog container on mobile */
+  }
+  
+  /* Sidebar adjustments for mobile */
+  .sidebar {
+      width: 150px; /* Adjust sidebar width for mobile */
+  }
+
+  /* Change header styles for mobile */
+  header {
+      width:70px; /* Full width for header */
+  }
+
+  /* Logo styles for mobile */
+  .logo {
+      width: 70px; /* Adjust logo width for mobile */
+      height: 70px; /* Adjust logo height for mobile */
+  }
+
+  .logo img {
+      width: 70px; /* Logo image size */
+      height: 70px; /* Logo image size */
+  }
+}
