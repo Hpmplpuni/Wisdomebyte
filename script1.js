@@ -52,8 +52,8 @@ const talksGrid = document.querySelector('.talks-grid');
 function loadTalks() {
   // Assuming this data comes from the server or an API
   const talks = [
-      { name: 'John Doe', feedback: 'This company is fantastic! Highly recommend.' },
-      { name: 'Jane Smith', feedback: 'Amazing experience. Professional and friendly team.' }
+      { name: 'Kavana,Student', feedback: 'This company is fantastic! Highly recommend.' },
+      { name: 'Manjunath,Student', feedback: 'Amazing experience. Professional and friendly team.' }
       // Add more client/trainee talks here as needed
   ];
 
